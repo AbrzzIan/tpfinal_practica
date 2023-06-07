@@ -14,11 +14,10 @@
         android:layout_height="match_parent">
 
         <ImageView
+            android:layout_width="140dp"
+            android:layout_height="80dp"
             android:id="@+id/ivFlag"
-            android:layout_width="132dp"
-            android:layout_height="79dp"
             android:layout_marginStart="24dp"
-            android:background="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -27,13 +26,14 @@
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Test"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
             android:layout_marginLeft="15dp"
-            app:layout_constraintStart_toEndOf="@id/ivFlag"
+            android:breakStrategy="simple"
+            android:maxEms="8"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintStart_toEndOf="@id/ivFlag"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

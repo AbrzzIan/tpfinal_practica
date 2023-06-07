@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.tp_final.databinding.ItemListAdapterBinding
 import com.example.tp_final.model.CountryItemShort
 
@@ -20,7 +21,10 @@ class CountryAdapter(private val countryList: List<CountryItemShort>) : Recycler
         val country  = countryList[position]
 
         holder.binding.tvName.text = country.name.common
-        holder.binding.ivFlag.setImageURI(country.flags.png.toUri())
+        Glide
+            .with(holder.binding.root.context)
+            .load(country.flags.png)
+            .into(holder.binding.ivFlag)
     }
 
     override fun getItemCount(): Int {
