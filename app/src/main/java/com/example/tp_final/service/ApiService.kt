@@ -1,11 +1,19 @@
 package com.example.tp_final.service
 
 import com.example.tp_final.model.CountryResponse
+import com.example.tp_final.model.CountryResponseLong
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface ApiService {
 
-    @GET("all?fields=name,flags")
-    fun getCharacters(): Call<CountryResponse>
+    @GET("independent?status=true&fields=name,flags,cca3")
+    fun getCountries(): Call<CountryResponse>
+
+    @GET("alpha/{code}")
+    fun getCountry(
+        @Path("code") code : String
+    ): Call<CountryResponseLong>
+
 }
