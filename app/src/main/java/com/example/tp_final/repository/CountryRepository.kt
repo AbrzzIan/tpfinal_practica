@@ -1,6 +1,6 @@
 package com.example.tp_final.repository
 
-import com.example.tp_final.model.CountryResponse
+import com.example.tp_final.model.CountryResponseShort
 import com.example.tp_final.model.CountryResponseLong
 import com.example.tp_final.service.ApiService
 import com.example.tp_final.service.RetrofitService
@@ -10,7 +10,7 @@ class CountryRepository {
 
     private val retrofit: ApiService = RetrofitService.getInstance()
 
-    fun getCountries() : Call<CountryResponse> {
+    fun getCountries() : Call<CountryResponseShort> {
         return retrofit.getCountries()
     }
 

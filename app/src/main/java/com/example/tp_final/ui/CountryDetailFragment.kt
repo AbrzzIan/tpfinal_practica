@@ -1,7 +1,6 @@
 package com.example.tp_final.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.tp_final.databinding.FragmentCountryinfoBinding
-import com.example.tp_final.model.CountryItem
 import com.example.tp_final.viewmodel.CountryDetailViewModel
 
 class CountryDetailFragment: Fragment() {
@@ -41,17 +39,6 @@ class CountryDetailFragment: Fragment() {
             .load(country.flags.png)
             .into(binding.imageView)
         }
-
-        //val country = countryDetailViewModel.country.value!![0]
-        //binding.tvName.text = country.name.toString()
-        //binding.tvCapital.text = country.capital.toString()
-        //binding.tvContinent.text = country.continent.toString()
-        //binding.tvPopulation.text = country.population.toString()
-
-        //Glide
-        //    .with(binding.root.context)
-        //    .load(country.flags)
-        //    .into(binding.imageView)
 
         return binding.root
     }

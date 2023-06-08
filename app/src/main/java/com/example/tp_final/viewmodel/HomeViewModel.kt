@@ -1,10 +1,11 @@
 package com.example.tp_final.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.tp_final.model.CountryItemShort
-import com.example.tp_final.model.CountryResponse
+import com.example.tp_final.model.CountryResponseShort
 import com.example.tp_final.repository.CountryRepository
 import retrofit2.Callback
 import retrofit2.Call
@@ -18,17 +19,18 @@ class HomeViewModel: ViewModel() {
 
 
     fun getCountries() {
-        repository.getCountries().enqueue(object : Callback<CountryResponse> {
+        repository.getCountries().enqueue(object : Callback<CountryResponseShort> {
             override fun onResponse(
-                call: Call<CountryResponse>,
-                response: Response<CountryResponse>
+                call: Call<CountryResponseShort>,
+                response: Response<CountryResponseShort>
             ) {
                 if (response.isSuccessful && response.body() != null) {
                     _countries.value = response.body()!!
                 }
             }
-            override fun onFailure(call: Call<CountryResponse>, t: Throwable) {
-                TODO("Not yet implemented")
+
+            override fun onFailure(call: Call<CountryResponseShort>, t: Throwable) {
+                Log.d("Error: ", t.message!!)
             }
         })
     }
